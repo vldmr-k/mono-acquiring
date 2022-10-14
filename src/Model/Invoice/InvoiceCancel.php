@@ -4,7 +4,7 @@ namespace VldmrK\MonoAcquiring\Model\Invoice;
 
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-class Cancel implements ModelInterface {
+class InvoiceCancel implements ModelInterface {
 
     /** @var string  */
     public string $status;

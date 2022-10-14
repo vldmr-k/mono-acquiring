@@ -2,18 +2,17 @@
 
 namespace VldmrK\MonoAcquiring\Model;
 
-use VldmrK\MonoAcquiring\CancelListItem;
 
 class Statement implements ModelInterface {
 
     /**
-     * @var array<int, MerchantStatementItem>
+     * @var array<int, StatementItem>
      */
     public array $list = [];
 
     /**
      * Pubkey constructor.
-     * @param string $key
+     * @param StatementItem[] $list
      */
     public function __construct(array $list)
     {
@@ -24,7 +23,7 @@ class Statement implements ModelInterface {
     public function toArray(): array
     {
         return [
-            'list' => array_map(function (MerchantStatementItem $item): array {
+            'list' => array_map(function (StatementItem $item): array {
                 return $item->toArray();
             }, $this->list)
         ];

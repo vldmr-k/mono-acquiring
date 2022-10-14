@@ -3,17 +3,17 @@
 namespace VldmrK\MonoAcquiring\Mapper\Invoice;
 
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
-use VldmrK\MonoAcquiring\Model\Invoice\Cancel;
+use VldmrK\MonoAcquiring\Model\Invoice\InvoiceCancel;
 
 class CancelMapper implements MapperInterface {
 
     /**
      * @param string $jsonString
-     * @return Cancel
+     * @return InvoiceCancel
      */
-    public function jsonToObject(string $jsonString): Cancel
+    public function jsonToObject(string $jsonString): InvoiceCancel
     {
         $data = \json_decode($jsonString, true);
-        return new Cancel($data['status'], $data['createdDate'], $data['modifiedDate']);
+        return new InvoiceCancel($data['status'], $data['createdDate'], $data['modifiedDate']);
     }
 }

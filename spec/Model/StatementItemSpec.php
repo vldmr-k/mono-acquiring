@@ -3,10 +3,10 @@
 namespace spec\VldmrK\MonoAcquiring\Model;
 
 use PhpSpec\ObjectBehavior;
-use VldmrK\MonoAcquiring\Model\MerchantStatementItem;
+use VldmrK\MonoAcquiring\Model\StatementItem;
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-class MerchantStatementItemSpec extends ObjectBehavior
+class StatementItemSpec extends ObjectBehavior
 {
     function let() {
         $this->beConstructedWith(
@@ -26,7 +26,7 @@ class MerchantStatementItemSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType(MerchantStatementItem::class);
+        $this->shouldHaveType(StatementItem::class);
         $this->shouldImplement(ModelInterface::class);
     }
 

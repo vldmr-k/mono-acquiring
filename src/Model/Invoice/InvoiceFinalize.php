@@ -5,7 +5,7 @@ namespace VldmrK\MonoAcquiring\Model\Invoice;
 use VldmrK\MonoAcquiring\Model\MapperInterface;
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-class Finalize implements ModelInterface {
+class InvoiceFinalize implements ModelInterface {
 
     /**
      * @var string

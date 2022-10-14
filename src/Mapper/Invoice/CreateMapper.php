@@ -3,14 +3,14 @@
 namespace VldmrK\MonoAcquiring\Mapper\Invoice;
 
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
-use VldmrK\MonoAcquiring\Model\Invoice\Create;
+use VldmrK\MonoAcquiring\Model\Invoice\InvoiceCreate;
 
 class CreateMapper implements MapperInterface {
 
-    public function jsonToObject(string $jsonString): Create
+    public function jsonToObject(string $jsonString): InvoiceCreate
     {
         $data = \json_decode($jsonString, true);
 
-        return new Create($data['invoiceId'], $data['pageUrl']);
+        return new InvoiceCreate($data['invoiceId'], $data['pageUrl']);
     }
 }

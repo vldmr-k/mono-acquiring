@@ -2,21 +2,37 @@
 
 namespace VldmrK\MonoAcquiring\Mapper\Invoice;
 
-use VldmrK\MonoAcquiring\CancelListItem;
-use VldmrK\MonoAcquiring\Model\Invoice\PaymentInfo;
-use VldmrK\MonoAcquiring\Model\MapperInterface;
+use VldmrK\MonoAcquiring\Mapper\MapperInterface;
+use VldmrK\MonoAcquiring\Model\Invoice\InvoiceCancel;
+use VldmrK\MonoAcquiring\Model\Invoice\CancelListItem;
+use VldmrK\MonoAcquiring\Model\Invoice\InvoicePaymentInfo;
+use function Symfony\Component\Console\Helper\fillNextRows;
 
 class PaymentInfoMapper implements MapperInterface {
 
     /**
      * @param string $jsonString
-     * @return PaymentInfo
+     * @return InvoicePaymentInfo
      */
-    public function jsonToObject(string $jsonString): PaymentInfo
+    public function jsonToObject(string $jsonString): InvoicePaymentInfo
     {
-        $data = json_decode($jsonString, true);
+        $data = \json_decode($jsonString, true);
 
-        $output = new PaymentInfo(
+        $cancelList = array_map(function ($item) {
+            return new CancelListItem(
+                $item['status'],
+                $item['createdDate'],
+                $item['modifiedDate'],
+                $item['amount'],
+                $item['ccy'],
+                $item['approvalCode'],
+                $item['rrn'],
+                $item['extRef']
+            );
+
+        }, $data['cancelList']);
+
+        $output = new InvoicePaymentInfo(
             $data['maskedPan'],
             $data['approvalCode'],
             $data['rrn'],
@@ -27,23 +43,11 @@ class PaymentInfoMapper implements MapperInterface {
             $data['terminal'],
             $data['paymentScheme'],
             $data['paymentMethod'],
-            $data['fee'],
             $data['domesticCard'],
             $data['country'],
+            $data['fee'],
+            $cancelList
         );
-
-        foreach ($data['cancelList'] as $item) {
-            $output->addCancelList(new CancelListItem(
-                $item['status'],
-                $item['createdDate'],
-                $item['modifiedDate'],
-                $item['amount'],
-                $item['ccy'],
-                $item['approvalCode'],
-                $item['rrn'],
-                $item['extRef']
-            ));
-        }
 
         return $output;
     }

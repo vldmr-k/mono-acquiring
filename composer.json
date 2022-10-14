@@ -4,11 +4,11 @@
     "type": "library",
     "require": {
         "starkbank/ecdsa": "^2.0",
-        "guzzlehttp/guzzle": "^7.5",
-        "ext-json": "*"
+        "guzzlehttp/guzzle": "^7.5"
     },
     "require-dev": {
-        "phpspec/phpspec": "^7.2"
+        "phpspec/phpspec": "^7.2",
+        "friends-of-phpspec/phpspec-code-coverage": "^6.1"
     },
     "license": "MIT",
     "autoload": {

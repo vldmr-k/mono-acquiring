@@ -2,8 +2,8 @@
 
 namespace VldmrK\MonoAcquiring\Mapper;
 
-use VldmrK\MonoAcquiring\CancelListItem;
-use VldmrK\MonoAcquiring\Model\MerchantStatementItem;
+use VldmrK\MonoAcquiring\Model\StatementCancelListItem;
+use VldmrK\MonoAcquiring\Model\StatementItem;
 use VldmrK\MonoAcquiring\Model\Statement;
 
 class StatementMapper implements MapperInterface {
@@ -14,11 +14,23 @@ class StatementMapper implements MapperInterface {
      */
     public function jsonToObject(string $jsonString): Statement
     {
-        $data = json_decode($jsonString, true);
+        $data = \json_decode($jsonString, true);
 
-        $list = [];
+        $output = [];
         foreach ($data['list'] as $item) {
-            $statement = new MerchantStatementItem(
+            $cancelList = array_map(function ($item): StatementCancelListItem {
+                return new StatementCancelListItem(
+                    $item['amount'],
+                    $item['ccy'],
+                    $item['date'],
+                    $item['maskedPan'],
+                    $item['approvalCode'],
+                    $item['rrn']
+                );
+
+            }, $item['cancelList']);
+
+            $statement = new StatementItem(
                 $item['invoiceId'],
                 $item['status'],
                 $item['maskedPan'],
@@ -29,25 +41,13 @@ class StatementMapper implements MapperInterface {
                 $item['ccy'],
                 $item['approvalCode'],
                 $item['rrn'],
-                $item['reference']
+                $item['reference'],
+                $cancelList
             );
 
-            foreach ($item['cancelList'] as $cancel) {
-                $statement->addCancelItem(new CancelListItem(
-                    $cancel['status'],
-                    $cancel['createdDate'],
-                    $cancel['modifiedDate'],
-                    $cancel['amount']*1,
-                    $cancel['ccy']*1,
-                    $cancel['approvalCode'],
-                    $cancel['rrn'],
-                    $cancel['extRef']
-                ));
-            }
-
-            $list[] = $statement;
+            $output[] = $statement;
         }
 
-        return new Statement($list);
+        return new Statement($output);
     }
 }

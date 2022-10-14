@@ -2,25 +2,37 @@
 
 namespace VldmrK\MonoAcquiring\Model\Invoice;
 
-use VldmrK\MonoAcquiring\CancelListItem;
-use VldmrK\MonoAcquiring\Model\MapperInterface;
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-class PaymentInfo implements ModelInterface {
+class InvoicePaymentInfo implements ModelInterface {
 
+    /** @var string  */
     public string $maskedPan;
+    /** @var string  */
     public string $approvalCode;
+    /** @var string  */
     public string $rrn;
+    /** @var int  */
     public int $amount;
+    /** @var int  */
     public int $ccy;
+    /** @var int  */
     public int $finalAmount;
+    /** @var string  */
     public string $createdDate;
+    /** @var string  */
     public string $terminal;
+    /** @var string  */
     public string $paymentScheme;
+    /** @var string  */
     public string $paymentMethod;
-    public int $fee;
+    /** @var int|null  */
+    public ?int $fee;
+    /** @var bool  */
     public bool $domesticCard;
+    /** @var string  */
     public string $country;
+    /** @var array<int, CancelListItem> */
     public array $cancelList = [];
 
     public function __construct(
@@ -34,9 +46,11 @@ class PaymentInfo implements ModelInterface {
         string $terminal,
         string $paymentScheme,
         string $paymentMethod,
-        int $fee,
         bool $domesticCard,
-        string $country)
+        string $country,
+        ?int $fee = null,
+        array $cancelList = []
+    )
     {
         $this->maskedPan = $maskedPan;
         $this->approvalCode = $approvalCode;
@@ -51,13 +65,7 @@ class PaymentInfo implements ModelInterface {
         $this->fee = $fee;
         $this->domesticCard = $domesticCard;
         $this->country = $country;
-    }
-
-    /**
-     * @param CancelListItem $item
-     */
-    public function addCancelList(CancelListItem $item): void {
-        $this->cancelList[] = $item;
+        $this->cancelList = $cancelList;
     }
 
     /**

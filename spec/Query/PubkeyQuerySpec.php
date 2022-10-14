@@ -15,6 +15,10 @@ class PubkeyQuerySpec extends ObjectBehavior
         $this->shouldBeAnInstanceOf(ResourceInterface::class);
     }
 
+    function it_to_array() {
+        $this->toArray()->shouldReturn([]);
+    }
+
     public function it_url() {
         $this->url()->shouldReturn("/api/merchant/pubkey");
     }

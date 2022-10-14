@@ -3,18 +3,18 @@
 namespace VldmrK\MonoAcquiring\Mapper\Invoice;
 
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
-use VldmrK\MonoAcquiring\Model\Invoice\Finalize;
+use VldmrK\MonoAcquiring\Model\Invoice\InvoiceFinalize;
 
 class FinalizeMapper implements MapperInterface {
 
     /**
      * @param string $jsonString
-     * @return Finalize
+     * @return InvoiceFinalize
      */
-    public function jsonToObject(string $jsonString): Finalize
+    public function jsonToObject(string $jsonString): InvoiceFinalize
     {
         $data = \json_decode($jsonString, true);
 
-        return new Finalize($data['status']);
+        return new InvoiceFinalize($data['status']);
     }
 }

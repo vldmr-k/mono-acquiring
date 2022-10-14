@@ -4,7 +4,7 @@ namespace VldmrK\MonoAcquiring\Model;
 
 use VldmrK\MonoAcquiring\CancelListItem;
 
-class MerchantStatementItem implements ModelInterface {
+class StatementItem implements ModelInterface {
 
     /** @var string  */
     public string $invoiceId;
@@ -43,7 +43,8 @@ class MerchantStatementItem implements ModelInterface {
         int $ccy,
         ?string $approvalCode = null,
         ?string $rrn = null,
-        ?string $reference = null
+        ?string $reference = null,
+        array $cancelList = []
     )
     {
         $this->invoiceId = $invoiceId;
@@ -57,13 +58,7 @@ class MerchantStatementItem implements ModelInterface {
         $this->approvalCode = $approvalCode;
         $this->rrn = $rrn;
         $this->reference = $reference;
-    }
-
-    /**
-     * @param CancelListItem $item
-     */
-    public function addCancelItem(StatementCancelListItem $item): void {
-        $this->cancelList[] = $item;
+        $this->cancelList = $cancelList;
     }
 
     public function toArray(): array

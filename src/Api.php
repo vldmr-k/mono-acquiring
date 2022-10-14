@@ -7,7 +7,7 @@ use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Exception\ClientException;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
-use VldmrK\MonoAcquiring\Model\Invoice\Create;
+use VldmrK\MonoAcquiring\Model\Invoice\InvoiceCreate;
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 use VldmrK\MonoAcquiring\Query\Invoice\CreateQuery;
 use VldmrK\MonoAcquiring\Query\QueryInterface;
@@ -17,7 +17,7 @@ use VldmrK\MonoAcquiring\Query\ResourceInterface;
  * Class Api
  * @package VldmrK\MonoAcquiring
  *
- * @method Create invoiceCreate(CreateQuery $query)
+ * @method InvoiceCreate invoiceCreate(CreateQuery $query)
  */
 class Api {
 

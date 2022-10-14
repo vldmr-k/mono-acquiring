@@ -5,7 +5,7 @@ namespace VldmrK\MonoAcquiring\Model\Invoice;
 use VldmrK\MonoAcquiring\Model\MapperInterface;
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-class Create implements ModelInterface {
+class InvoiceCreate implements ModelInterface {
 
     /** @var string  */
     public string $invoiceId;

@@ -4,18 +4,28 @@ namespace VldmrK\MonoAcquiring\Model\Invoice;
 
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-class Status implements ModelInterface {
+class InvoiceStatus implements ModelInterface {
 
+    /** @var string  */
     public string $invoiceId;
+    /** @var string  */
     public string $status;
+    /** @var int  */
     public int $amount;
+    /** @var int  */
     public int $ccy;
+    /** @var int  */
     public int $finalAmount;
 
+    /** @var string|null  */
     public ?string $reference;
+    /** @var string|null  */
     public ?string $createdDate;
-    public ?string $modifierDate;
+    /** @var string|null  */
+    public ?string $modifiedDate;
+    /** @var string|null  */
     public ?string $failureReason;
+    /** @var array <int, StatusCancelListItem> */
     public array $cancelList = [];
 
 
@@ -26,6 +36,7 @@ class Status implements ModelInterface {
      * @param int $amount
      * @param int $ccy
      * @param int $finalAmount
+     * @param CancelListItem[] $cancelList
      * @param string|null $reference
      * @param string|null $createdDate
      * @param string|null $modifiedDate
@@ -41,7 +52,8 @@ class Status implements ModelInterface {
         ?string $reference = null,
         ?string $createdDate = null,
         ?string $modifiedDate = null,
-        ?string $failureReason = null
+        ?string $failureReason = null,
+        array $cancelList = []
     )
     {
         //required
@@ -51,20 +63,17 @@ class Status implements ModelInterface {
         $this->ccy = $ccy;
         $this->finalAmount = $finalAmount;
 
+
         //optional
         $this->reference = $reference;
         $this->createdDate = $createdDate;
-        $this->modifierDate = $modifiedDate;
+        $this->modifiedDate = $modifiedDate;
         $this->failureReason = $failureReason;
+
+        $this->cancelList = $cancelList;
+
     }
 
-    /**
-     * @param CancelListItem $item
-     */
-    public function addCancelList(CancelListItem $item): void
-    {
-        $this->cancelList[] = $item;
-    }
 
     /**
      * @return array
@@ -78,14 +87,15 @@ class Status implements ModelInterface {
             'ccy' => $this->ccy,
             'finalAmount' => $this->finalAmount,
 
+            'reference' => $this->reference,
+            'createdDate' => $this->createdDate,
+            'modifiedDate' => $this->modifiedDate,
+            'failureReason' => $this->failureReason,
+
             'cancelList' => array_map(function (CancelListItem $item): array {
                 return $item->toArray();
             }, $this->cancelList),
 
-            'reference' => $this->reference,
-            'createdDate' => $this->createdDate,
-            'modifierDate' => $this->modifierDate,
-            'failureReason' => $this->failureReason
         ];
     }
 
