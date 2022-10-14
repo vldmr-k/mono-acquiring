@@ -1,0 +1,7 @@
+suites:
+  main:
+    namespace: VldmrK\MonoAcquiring
+    psr4_prefix: VldmrK\MonoAcquiring
+    src_path: ./src
+    formatter.name: pretty
+

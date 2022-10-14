@@ -1,0 +1,28 @@
+{
+    "name": "vldmr-k/mono-acquiring",
+    "description": "Monobank Acquiring library",
+    "type": "library",
+    "require": {
+        "starkbank/ecdsa": "^2.0",
+        "guzzlehttp/guzzle": "^7.5",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^7.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "VldmrK\\MonoAcquiring\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vladimir Konchakovsky",
+            "email": "wowkaster@gmail.com"
+        }
+    ],
+    "scripts": {
+        "test": "./vendor/bin/phpspec run"
+    }
+}
