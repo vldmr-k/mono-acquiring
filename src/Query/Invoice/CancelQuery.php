@@ -4,13 +4,15 @@ namespace VldmrK\MonoAcquiring\Query\Invoice;
 
 use VldmrK\MonoAcquiring\Mapper\Invoice\CancelMapper;
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
-use VldmrK\MonoAcquiring\Query\QueryInterface;
 use VldmrK\MonoAcquiring\Query\ResourceInterface;
 
-class CancelQuery implements ResourceInterface {
-
+class CancelQuery implements ResourceInterface
+{
+    /** @var string  */
     public string $invoiceId;
+    /** @var string|null  */
     public ?string $extRef;
+    /** @var int|null  */
     public ?int $amount;
 
     /**
@@ -27,7 +29,7 @@ class CancelQuery implements ResourceInterface {
     }
 
     /**
-     * @return array
+     * @return array<string, string|null|int>
      */
     public function toArray(): array
     {

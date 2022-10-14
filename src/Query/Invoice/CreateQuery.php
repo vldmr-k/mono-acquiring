@@ -6,11 +6,10 @@ use VldmrK\MonoAcquiring\Mapper\Invoice\CreateMapper;
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
 use VldmrK\MonoAcquiring\Query\ResourceInterface;
 
-class CreateQuery implements  ResourceInterface {
-
-
-    const PAYMENT_TYPE_DEBIT = 'debit';
-    const PAYMENT_TYPE_HOLD = 'hold';
+class CreateQuery implements ResourceInterface
+{
+    public const PAYMENT_TYPE_DEBIT = 'debit';
+    public const PAYMENT_TYPE_HOLD = 'hold';
 
     private int $amount;
     private ?MerchantPaymInfo $merchantPaymInfo;
@@ -41,8 +40,7 @@ class CreateQuery implements  ResourceInterface {
         ?int $validity = null,
         ?string $paymentType = null,
         ?string $qrId = null
-    )
-    {
+    ) {
         $this->amount = $amount;
         $this->merchantPaymInfo = $merchantPaymInfo;
         $this->ccy = $ccy;
@@ -54,7 +52,7 @@ class CreateQuery implements  ResourceInterface {
     }
 
     /**
-     * @return array
+     * @return array<string, string|null|int|array|iterable<string, array|string|null>>
      */
     public function toArray(): array
     {

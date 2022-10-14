@@ -2,8 +2,8 @@
 
 namespace VldmrK\MonoAcquiring;
 
-class Config {
-
+class Config
+{
     /** @var string  */
     public string $xToken;
 
@@ -15,11 +15,15 @@ class Config {
 
     /**
      * Config constructor.
-     * @param string $token
+     * @param string $xToken
      * @param int $connectionTimeout
+     * @param string $baseUri
      */
-    public function __construct(string $xToken, int $connectionTimeout = 10, string $baseUri = 'https://api.monobank.ua/')
-    {
+    public function __construct(
+        string $xToken,
+        int $connectionTimeout = 10,
+        string $baseUri = 'https://api.monobank.ua/'
+    ) {
         $this->xToken = $xToken;
         $this->connectionTimeout = $connectionTimeout;
         $this->baseUri = $baseUri;

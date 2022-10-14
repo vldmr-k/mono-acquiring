@@ -2,8 +2,8 @@
 
 namespace VldmrK\MonoAcquiring\Model;
 
-class Details implements ModelInterface {
-
+class Details implements ModelInterface
+{
     /** @var string  */
     public string $merchantId;
 
@@ -22,7 +22,7 @@ class Details implements ModelInterface {
     }
 
     /**
-     * @return array
+     * @return array<string, string>
      */
     public function toArray(): array
     {

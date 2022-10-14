@@ -4,8 +4,8 @@ namespace VldmrK\MonoAcquiring\Model\Invoice;
 
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-class InvoicePaymentInfo implements ModelInterface {
-
+class InvoicePaymentInfo implements ModelInterface
+{
     /** @var string  */
     public string $maskedPan;
     /** @var string  */
@@ -35,6 +35,23 @@ class InvoicePaymentInfo implements ModelInterface {
     /** @var array<int, CancelListItem> */
     public array $cancelList = [];
 
+    /**
+     * InvoicePaymentInfo constructor.
+     * @param string $maskedPan
+     * @param string $approvalCode
+     * @param string $rrn
+     * @param int $amount
+     * @param int $ccy
+     * @param int $finalAmount
+     * @param string $createdDate
+     * @param string $terminal
+     * @param string $paymentScheme
+     * @param string $paymentMethod
+     * @param bool $domesticCard
+     * @param string $country
+     * @param int|null $fee
+     * @param array<int, CancelListItem> $cancelList
+     */
     public function __construct(
         string $maskedPan,
         string $approvalCode,
@@ -50,8 +67,7 @@ class InvoicePaymentInfo implements ModelInterface {
         string $country,
         ?int $fee = null,
         array $cancelList = []
-    )
-    {
+    ) {
         $this->maskedPan = $maskedPan;
         $this->approvalCode = $approvalCode;
         $this->rrn = $rrn;
@@ -69,7 +85,8 @@ class InvoicePaymentInfo implements ModelInterface {
     }
 
     /**
-     * @return array
+     * @phpstan-ignore-next-line
+     * @return  array
      */
     public function toArray(): array
     {

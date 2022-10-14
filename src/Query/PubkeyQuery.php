@@ -2,12 +2,14 @@
 
 namespace VldmrK\MonoAcquiring\Query;
 
-
 use VldmrK\MonoAcquiring\Mapper\PubkeyMapper;
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
 
-class PubkeyQuery implements QueryInterface, ResourceInterface {
-
+class PubkeyQuery implements QueryInterface, ResourceInterface
+{
+    /**
+     * @return array
+     */
     public function toArray(): array
     {
         return [];

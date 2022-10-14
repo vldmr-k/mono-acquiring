@@ -2,14 +2,13 @@
 
 namespace VldmrK\MonoAcquiring\Query\Invoice;
 
-
 use VldmrK\MonoAcquiring\Mapper\Invoice\StatusMapper;
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
 use VldmrK\MonoAcquiring\Query\QueryInterface;
 use VldmrK\MonoAcquiring\Query\ResourceInterface;
 
-class StatusQuery implements ResourceInterface {
-
+class StatusQuery implements ResourceInterface
+{
     /**
      * @var string
      */

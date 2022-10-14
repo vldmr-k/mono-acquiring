@@ -2,11 +2,10 @@
 
 namespace VldmrK\MonoAcquiring\Query\Invoice;
 
-
 use VldmrK\MonoAcquiring\Query\QueryInterface;
 
-class MerchantPaymInfo implements QueryInterface {
-
+class MerchantPaymInfo implements QueryInterface
+{
     /**
      * @var string
      */
@@ -29,14 +28,7 @@ class MerchantPaymInfo implements QueryInterface {
     }
 
     /**
-     * @param BasketOrder $basketOrder
-     */
-    public function addBasketOrder(BasketOrder $basketOrder) {
-        $this->basketOrder[] = $basketOrder;
-    }
-
-    /**
-     * @return array
+     * @return array<string, string|null|array>
      */
     public function toArray(): array
     {
@@ -48,5 +40,4 @@ class MerchantPaymInfo implements QueryInterface {
             }, $this->basketOrder)
         ];
     }
-
 }

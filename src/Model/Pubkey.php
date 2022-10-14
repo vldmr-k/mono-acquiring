@@ -2,8 +2,11 @@
 
 namespace VldmrK\MonoAcquiring\Model;
 
-class Pubkey implements ModelInterface {
-
+class Pubkey implements ModelInterface
+{
+    /**
+     * @var string
+     */
     public string $key;
 
     /**
@@ -15,7 +18,11 @@ class Pubkey implements ModelInterface {
         $this->key = $key;
     }
 
-    public function toArray(): array  {
+    /**
+     * @return array|string[]
+     */
+    public function toArray(): array
+    {
         return [
             'key' => $this->key,
         ];

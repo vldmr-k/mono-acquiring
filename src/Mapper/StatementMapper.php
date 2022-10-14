@@ -6,8 +6,8 @@ use VldmrK\MonoAcquiring\Model\StatementCancelListItem;
 use VldmrK\MonoAcquiring\Model\StatementItem;
 use VldmrK\MonoAcquiring\Model\Statement;
 
-class StatementMapper implements MapperInterface {
-
+class StatementMapper implements MapperInterface
+{
     /**
      * @param string $jsonString
      * @return Statement
@@ -27,7 +27,6 @@ class StatementMapper implements MapperInterface {
                     $item['approvalCode'],
                     $item['rrn']
                 );
-
             }, $item['cancelList']);
 
             $statement = new StatementItem(

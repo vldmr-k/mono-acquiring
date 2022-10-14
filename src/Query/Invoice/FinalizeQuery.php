@@ -7,8 +7,8 @@ use VldmrK\MonoAcquiring\Mapper\MapperInterface;
 use VldmrK\MonoAcquiring\Query\QueryInterface;
 use VldmrK\MonoAcquiring\Query\ResourceInterface;
 
-class FinalizeQuery implements ResourceInterface {
-
+class FinalizeQuery implements ResourceInterface
+{
     /** @var string  */
     private string $invoiceId;
     /** @var int|null  */
@@ -26,7 +26,7 @@ class FinalizeQuery implements ResourceInterface {
     }
 
     /**
-     * @return array
+     * @return array<string, string|int|null>
      */
     public function toArray(): array
     {

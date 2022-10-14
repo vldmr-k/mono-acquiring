@@ -2,9 +2,10 @@
 
 namespace VldmrK\MonoAcquiring\Query;
 
-interface QueryInterface {
+interface QueryInterface
+{
     /**
      * @return array
      */
-    public function toArray(): array ;
+    public function toArray(): array;
 }

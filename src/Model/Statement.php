@@ -2,9 +2,8 @@
 
 namespace VldmrK\MonoAcquiring\Model;
 
-
-class Statement implements ModelInterface {
-
+class Statement implements ModelInterface
+{
     /**
      * @var array<int, StatementItem>
      */
@@ -19,7 +18,9 @@ class Statement implements ModelInterface {
         $this->list = $list;
     }
 
-
+    /**
+     * @return array<string, array<int, array<string, array<int, array>|int|string|null>>>
+     */
     public function toArray(): array
     {
         return [

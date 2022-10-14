@@ -2,9 +2,10 @@
 
 namespace VldmrK\MonoAcquiring\Model;
 
-
-interface ModelInterface {
-
-    public function toArray(): array ;
-
+interface ModelInterface
+{
+    /**
+     * @return array<string, string|null|int|array>
+     */
+    public function toArray(): array;
 }
