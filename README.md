@@ -29,8 +29,8 @@ $response = $api->call(new \VldmrK\MonoAcquiring\Query\DetailsQuery());
 print_r($response); // [ 'merchantId' => 'test_A4EaPDryzz', 'merchantName' => 'Test Caption']
 ```
 
-Before run example, please set global variable `MONO_XTOKEN`
-More example you can find here [example/](example/)
+More example you can find here [example/](example/). Before run example, please set global variable `MONO_XTOKEN`
+
 
 ### Run Test
 ```shell script
