@@ -25,7 +25,7 @@ class Api
     private $config;
 
     /** @var Client */
-    private ?Client $client;
+    private ?Client $client = null;
 
 
     /**
@@ -74,7 +74,7 @@ class Api
 
     /**
      * @param ResourceInterface $query
-     * @param array<string, string|int|array> $options
+     * @param array<string, string|int|array<string, string>> $options
      * @return ModelInterface
      * @throws ErrorResponseException
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -84,7 +84,7 @@ class Api
         return $this->execute(
             $query->url(),
             $query->httpMethod(),
-            $query->toArray(), //@phpstan-ignore-line
+            $query->toArray(),
             $query->mapper(),
             $options
         );

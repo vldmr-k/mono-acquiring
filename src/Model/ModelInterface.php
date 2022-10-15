@@ -5,7 +5,8 @@ namespace VldmrK\MonoAcquiring\Model;
 interface ModelInterface
 {
     /**
-     * @return array<string, string|null|int|array>
+     * @phpstan-ignore-next-line
+     * @return array
      */
     public function toArray(): array;
 }

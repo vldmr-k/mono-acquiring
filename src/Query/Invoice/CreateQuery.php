@@ -52,7 +52,7 @@ class CreateQuery implements ResourceInterface
     }
 
     /**
-     * @return array<string, string|null|int|array|iterable<string, array|string|null>>
+     * @return array<string, array<string, array<int, array<string,int|string|null>>|string>|int|string|null>
      */
     public function toArray(): array
     {

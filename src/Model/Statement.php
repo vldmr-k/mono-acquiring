@@ -19,7 +19,7 @@ class Statement implements ModelInterface
     }
 
     /**
-     * @return array<string, array<int, array<string, array<int, array>|int|string|null>>>
+     * @return array<string, array<int, array<string, string|int|null>>>
      */
     public function toArray(): array
     {

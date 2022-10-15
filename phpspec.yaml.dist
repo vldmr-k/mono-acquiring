@@ -1,7 +1,15 @@
+bootstrap: spec/_bootstrap.php
 suites:
   main:
     namespace: VldmrK\MonoAcquiring
     psr4_prefix: VldmrK\MonoAcquiring
     src_path: ./src
-    formatter.name: pretty
 
+extensions:
+  FriendsOfPhpSpec\PhpSpec\CodeCoverage\CodeCoverageExtension:
+    format:
+      - html
+    output:
+      html: spec/_coverage
+
+formatter.name: pretty

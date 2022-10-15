@@ -28,7 +28,7 @@ class MerchantPaymInfo implements QueryInterface
     }
 
     /**
-     * @return array<string, string|null|array>
+     * @return array<string, array<int, array<string, int|string|null>>|string>
      */
     public function toArray(): array
     {
@@ -39,5 +39,13 @@ class MerchantPaymInfo implements QueryInterface
                 return $basketOrder->toArray();
             }, $this->basketOrder)
         ];
+    }
+
+    /**
+     * @param BasketOrder $order
+     */
+    public function addBasketOrder(BasketOrder $order): void
+    {
+        $this->basketOrder[] = $order;
     }
 }

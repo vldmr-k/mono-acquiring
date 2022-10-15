@@ -7,7 +7,7 @@
         "starkbank/ecdsa": "0.0.5"
     },
     "require-dev": {
-        "php": "^7.2|^8.0",
+        "php": "^7.4|^8.0",
         "phpspec/phpspec": "^7.2",
         "friends-of-phpspec/phpspec-code-coverage": "^6.1",
         "squizlabs/php_codesniffer": "3.*",
@@ -28,7 +28,6 @@
     "scripts": {
         "static": [
             "vendor/bin/phpcs --ignore-annotations --standard=PSR12 src && vendor/bin/phpstan analyse "
-        ],
-        "test": "./vendor/bin/phpspec run"
+        ]
     }
 }

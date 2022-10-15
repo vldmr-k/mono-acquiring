@@ -74,7 +74,7 @@ class StatementItem implements ModelInterface
     }
 
     /**
-     * @return array<string, array<int, array>|int|string|null>
+     * @return   array<string, array<int, array<string, int|string|null>>|int|string|null>
      */
     public function toArray(): array
     {

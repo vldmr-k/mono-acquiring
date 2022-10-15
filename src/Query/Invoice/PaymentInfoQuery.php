@@ -23,6 +23,9 @@ class PaymentInfoQuery implements ResourceInterface
     }
 
 
+    /**
+     * @return array|string[]
+     */
     public function toArray(): array
     {
         return [

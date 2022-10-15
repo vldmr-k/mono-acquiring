@@ -26,6 +26,7 @@ class ErrorResponseException extends \Exception
     public function __construct(ResponseInterface $response, RequestInterface $request)
     {
         parent::__construct($response->getBody()->getContents(), $response->getStatusCode());
+        $this->response = $response;
         $this->request = $request;
     }
 

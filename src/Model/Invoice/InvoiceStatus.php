@@ -72,7 +72,7 @@ class InvoiceStatus implements ModelInterface
 
 
     /**
-     * @return array<string, string|null|int|array>
+     * @return array<string, string|null|int|array<int,array<string, string|int|null>>>
      */
     public function toArray(): array
     {
