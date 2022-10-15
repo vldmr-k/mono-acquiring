@@ -2,11 +2,10 @@
 
 namespace VldmrK\MonoAcquiring\Model\Invoice;
 
-use VldmrK\MonoAcquiring\Model\MapperInterface;
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-class InvoiceCreate implements ModelInterface {
-
+class InvoiceCreate implements ModelInterface
+{
     /** @var string  */
     public string $invoiceId;
 
@@ -20,7 +19,7 @@ class InvoiceCreate implements ModelInterface {
     }
 
     /**
-     * @return array
+     * @return array<string, string>
      */
     public function toArray(): array
     {

@@ -3,13 +3,11 @@
 namespace VldmrK\MonoAcquiring\Mapper\Invoice;
 
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
-use VldmrK\MonoAcquiring\Model\Invoice\InvoiceCancel;
 use VldmrK\MonoAcquiring\Model\Invoice\CancelListItem;
 use VldmrK\MonoAcquiring\Model\Invoice\InvoicePaymentInfo;
-use function Symfony\Component\Console\Helper\fillNextRows;
 
-class PaymentInfoMapper implements MapperInterface {
-
+class PaymentInfoMapper implements MapperInterface
+{
     /**
      * @param string $jsonString
      * @return InvoicePaymentInfo
@@ -29,7 +27,6 @@ class PaymentInfoMapper implements MapperInterface {
                 $item['rrn'],
                 $item['extRef']
             );
-
         }, $data['cancelList']);
 
         $output = new InvoicePaymentInfo(

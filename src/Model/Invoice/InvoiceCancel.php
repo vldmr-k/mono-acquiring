@@ -4,8 +4,8 @@ namespace VldmrK\MonoAcquiring\Model\Invoice;
 
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-class InvoiceCancel implements ModelInterface {
-
+class InvoiceCancel implements ModelInterface
+{
     /** @var string  */
     public string $status;
     /** @var string  */
@@ -14,10 +14,10 @@ class InvoiceCancel implements ModelInterface {
     public string $modifiedDate;
 
     /**
-     * Cancel constructor.
-     * @param string $invoiceId
-     * @param string $extRef
-     * @param int $amount
+     * InvoiceCancel constructor.
+     * @param string $status
+     * @param string $createdDate
+     * @param string $modifiedDate
      */
     public function __construct(string $status, string $createdDate, string $modifiedDate)
     {
@@ -27,7 +27,7 @@ class InvoiceCancel implements ModelInterface {
     }
 
     /**
-     * @return array
+     * @return array<string, string>
      */
     public function toArray(): array
     {
@@ -37,5 +37,4 @@ class InvoiceCancel implements ModelInterface {
             'modifiedDate' => $this->modifiedDate
         ];
     }
-
 }

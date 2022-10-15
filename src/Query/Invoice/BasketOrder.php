@@ -2,15 +2,19 @@
 
 namespace VldmrK\MonoAcquiring\Query\Invoice;
 
-
 use VldmrK\MonoAcquiring\Query\QueryInterface;
 
-class BasketOrder implements QueryInterface {
-
+class BasketOrder implements QueryInterface
+{
+    /** @var string  */
     public string $name;
+    /** @var int  */
     public int $qty;
+    /** @var int  */
     public int $sum;
+    /** @var string|null  */
     public ?string $icon;
+    /** @var string|null  */
     public ?string $unit;
 
     /**
@@ -18,10 +22,10 @@ class BasketOrder implements QueryInterface {
      * @param string $name
      * @param int $qty
      * @param int $sum
-     * @param string $icon
-     * @param string $units
+     * @param string|null $icon
+     * @param string|null $unit
      */
-    public function __construct(string $name, int $qty, int $sum, ?string $icon = null, ?string  $unit = null)
+    public function __construct(string $name, int $qty, int $sum, ?string $icon = null, ?string $unit = null)
     {
         $this->name = $name;
         $this->qty = $qty;
@@ -31,7 +35,7 @@ class BasketOrder implements QueryInterface {
     }
 
     /**
-     * @return array
+     * @return array<string, string|null|int>
      */
     public function toArray(): array
     {
@@ -43,5 +47,4 @@ class BasketOrder implements QueryInterface {
             'unit' => $this->unit
         ];
     }
-
 }

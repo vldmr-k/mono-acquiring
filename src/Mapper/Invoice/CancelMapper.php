@@ -5,8 +5,8 @@ namespace VldmrK\MonoAcquiring\Mapper\Invoice;
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
 use VldmrK\MonoAcquiring\Model\Invoice\InvoiceCancel;
 
-class CancelMapper implements MapperInterface {
-
+class CancelMapper implements MapperInterface
+{
     /**
      * @param string $jsonString
      * @return InvoiceCancel

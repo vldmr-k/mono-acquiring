@@ -2,12 +2,11 @@
 
 namespace VldmrK\MonoAcquiring\Query;
 
-
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
 use VldmrK\MonoAcquiring\Mapper\StatementMapper;
 
-class StatementQuery implements ResourceInterface {
-
+class StatementQuery implements ResourceInterface
+{
     /** @var int  */
     public int $from;
 
@@ -26,7 +25,7 @@ class StatementQuery implements ResourceInterface {
     }
 
     /**
-     * @return array
+     * @return array<string, int|null>
      */
     public function toArray(): array
     {

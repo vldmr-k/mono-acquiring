@@ -2,15 +2,13 @@
 
 namespace VldmrK\MonoAcquiring\Query;
 
-
 use VldmrK\MonoAcquiring\Mapper\DetailsMapper;
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
 
-class DetailsQuery implements ResourceInterface {
-
-
+class DetailsQuery implements ResourceInterface
+{
     /**
-     * @return array
+     * @return array<string, string>
      */
     public function toArray(): array
     {

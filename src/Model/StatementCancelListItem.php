@@ -2,8 +2,8 @@
 
 namespace VldmrK\MonoAcquiring\Model;
 
-class StatementCancelListItem implements ModelInterface {
-
+class StatementCancelListItem implements ModelInterface
+{
     /** @var int  */
     public int $amount;
     /** @var int  */
@@ -27,8 +27,14 @@ class StatementCancelListItem implements ModelInterface {
      * @param string|null $approvalCode
      * @param string|null $rrn
      */
-    public function __construct(int $amount, int $ccy, string $date, string $maskedPan, ?string $approvalCode = null, ?string $rrn = null)
-    {
+    public function __construct(
+        int $amount,
+        int $ccy,
+        string $date,
+        string $maskedPan,
+        ?string $approvalCode = null,
+        ?string $rrn = null
+    ) {
         $this->amount = $amount;
         $this->ccy = $ccy;
         $this->date = $date;
@@ -38,7 +44,7 @@ class StatementCancelListItem implements ModelInterface {
     }
 
     /**
-     * @return array
+     * @return array<string, string|null|int>
      */
     public function toArray(): array
     {

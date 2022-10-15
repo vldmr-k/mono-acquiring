@@ -2,19 +2,21 @@
 
 namespace VldmrK\MonoAcquiring\Query\Invoice;
 
-
 use VldmrK\MonoAcquiring\Mapper\Invoice\RemoveMapper;
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
-use VldmrK\MonoAcquiring\Query\QueryInterface;
 use VldmrK\MonoAcquiring\Query\ResourceInterface;
 
-class RemoveQuery implements ResourceInterface {
-
+class RemoveQuery implements ResourceInterface
+{
     /**
      * @var string
      */
     public string $invoiceId;
 
+    /**
+     * RemoveQuery constructor.
+     * @param string $invoiceId
+     */
     public function __construct(string $invoiceId)
     {
         $this->invoiceId = $invoiceId;

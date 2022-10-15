@@ -2,9 +2,11 @@
 
 namespace VldmrK\MonoAcquiring\Query;
 
-interface QueryInterface {
+interface QueryInterface
+{
     /**
+     * @phpstan-ignore-next-line
      * @return array
      */
-    public function toArray(): array ;
+    public function toArray(): array;
 }

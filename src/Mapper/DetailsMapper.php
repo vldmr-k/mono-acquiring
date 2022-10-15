@@ -4,16 +4,15 @@ namespace VldmrK\MonoAcquiring\Mapper;
 
 use VldmrK\MonoAcquiring\Model\Details;
 
-class DetailsMapper implements MapperInterface {
-
+class DetailsMapper implements MapperInterface
+{
     /**
      * @param string $jsonString
-     * @return self
+     * @return Details
      */
     public function jsonToObject(string $jsonString): Details
     {
         $data = \json_decode($jsonString, true);
         return new Details($data['merchantId'], $data['merchantName']);
     }
-
 }

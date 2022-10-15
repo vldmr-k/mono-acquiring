@@ -3,12 +3,15 @@
     "description": "Monobank Acquiring library",
     "type": "library",
     "require": {
-        "starkbank/ecdsa": "^2.0",
-        "guzzlehttp/guzzle": "^7.5"
+        "guzzlehttp/guzzle": "^7.5",
+        "starkbank/ecdsa": "0.0.5"
     },
     "require-dev": {
+        "php": "^7.4|^8.0",
         "phpspec/phpspec": "^7.2",
-        "friends-of-phpspec/phpspec-code-coverage": "^6.1"
+        "friends-of-phpspec/phpspec-code-coverage": "^6.1",
+        "squizlabs/php_codesniffer": "3.*",
+        "phpstan/phpstan": "~1.0.0"
     },
     "license": "MIT",
     "autoload": {
@@ -23,6 +26,8 @@
         }
     ],
     "scripts": {
-        "test": "./vendor/bin/phpspec run"
+        "static": [
+            "vendor/bin/phpcs --ignore-annotations --standard=PSR12 src && vendor/bin/phpstan analyse "
+        ]
     }
 }

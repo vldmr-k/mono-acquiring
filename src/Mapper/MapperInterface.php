@@ -4,9 +4,11 @@ namespace VldmrK\MonoAcquiring\Mapper;
 
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-interface MapperInterface {
+interface MapperInterface
+{
     /**
-     * @return $this
+     * @param string $jsonString
+     * @return ModelInterface $self
      */
     public function jsonToObject(string $jsonString): ModelInterface;
 }

@@ -2,11 +2,10 @@
 
 namespace VldmrK\MonoAcquiring\Model\Invoice;
 
-
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-class CancelListItem implements ModelInterface {
-
+class CancelListItem implements ModelInterface
+{
     /** @var string  */
     public string $status;
     /** @var string  */
@@ -45,8 +44,7 @@ class CancelListItem implements ModelInterface {
         ?string $approvalCode = null,
         ?string $rrn = null,
         ?string $extRef = null
-    )
-    {
+    ) {
         $this->status = $status;
         $this->createdDate = $createdDate;
         $this->modifiedDate = $modifiedDate;
@@ -59,7 +57,7 @@ class CancelListItem implements ModelInterface {
     }
 
     /**
-     * @return array
+     * @return array<string, string|int|null>
      */
     public function toArray(): array
     {

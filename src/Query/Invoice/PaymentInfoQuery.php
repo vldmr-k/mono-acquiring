@@ -2,13 +2,12 @@
 
 namespace VldmrK\MonoAcquiring\Query\Invoice;
 
-
 use VldmrK\MonoAcquiring\Mapper\Invoice\PaymentInfoMapper;
 use VldmrK\MonoAcquiring\Mapper\MapperInterface;
 use VldmrK\MonoAcquiring\Query\ResourceInterface;
 
-class PaymentInfoQuery implements ResourceInterface {
-
+class PaymentInfoQuery implements ResourceInterface
+{
     /**
      * @var string
      */
@@ -24,6 +23,9 @@ class PaymentInfoQuery implements ResourceInterface {
     }
 
 
+    /**
+     * @return array|string[]
+     */
     public function toArray(): array
     {
         return [

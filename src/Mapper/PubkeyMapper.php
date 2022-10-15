@@ -4,8 +4,8 @@ namespace VldmrK\MonoAcquiring\Mapper;
 
 use VldmrK\MonoAcquiring\Model\Pubkey;
 
-class PubkeyMapper implements MapperInterface {
-
+class PubkeyMapper implements MapperInterface
+{
     /**
      * @param string $jsonString
      * @return Pubkey

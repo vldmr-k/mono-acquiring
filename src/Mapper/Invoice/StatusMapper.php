@@ -6,8 +6,8 @@ use VldmrK\MonoAcquiring\Mapper\MapperInterface;
 use VldmrK\MonoAcquiring\Model\Invoice\CancelListItem;
 use VldmrK\MonoAcquiring\Model\Invoice\InvoiceStatus;
 
-class StatusMapper implements MapperInterface {
-
+class StatusMapper implements MapperInterface
+{
     /**
      * @param string $jsonString
      * @return InvoiceStatus
@@ -44,5 +44,4 @@ class StatusMapper implements MapperInterface {
 
         return $output;
     }
-
 }

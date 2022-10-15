@@ -4,8 +4,8 @@ namespace VldmrK\MonoAcquiring\Model\Invoice;
 
 use VldmrK\MonoAcquiring\Model\ModelInterface;
 
-class InvoiceStatus implements ModelInterface {
-
+class InvoiceStatus implements ModelInterface
+{
     /** @var string  */
     public string $invoiceId;
     /** @var string  */
@@ -25,9 +25,8 @@ class InvoiceStatus implements ModelInterface {
     public ?string $modifiedDate;
     /** @var string|null  */
     public ?string $failureReason;
-    /** @var array <int, StatusCancelListItem> */
+    /** @var array <int, CancelListItem> */
     public array $cancelList = [];
-
 
     /**
      * Status constructor.
@@ -48,14 +47,12 @@ class InvoiceStatus implements ModelInterface {
         int $amount,
         int $ccy,
         int $finalAmount,
-
         ?string $reference = null,
         ?string $createdDate = null,
         ?string $modifiedDate = null,
         ?string $failureReason = null,
         array $cancelList = []
-    )
-    {
+    ) {
         //required
         $this->invoiceId = $invoiceId;
         $this->status = $status;
@@ -71,12 +68,11 @@ class InvoiceStatus implements ModelInterface {
         $this->failureReason = $failureReason;
 
         $this->cancelList = $cancelList;
-
     }
 
 
     /**
-     * @return array
+     * @return array<string, string|null|int|array<int,array<string, string|int|null>>>
      */
     public function toArray(): array
     {
@@ -98,5 +94,4 @@ class InvoiceStatus implements ModelInterface {
 
         ];
     }
-
 }
