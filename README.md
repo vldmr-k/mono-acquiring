@@ -3,7 +3,6 @@
 Unofficial SDK for Monobank Acquiring. https://api.monobank.ua/docs/acquiring.html
 
 ### Examples
-Before run example, please set global variable `MONO_XTOKEN`
 
 
 ###### Retrieve public key
@@ -30,6 +29,7 @@ $response = $api->call(new \VldmrK\MonoAcquiring\Query\DetailsQuery());
 print_r($response); // [ 'merchantId' => 'test_A4EaPDryzz', 'merchantName' => 'Test Caption']
 ```
 
+Before run example, please set global variable `MONO_XTOKEN`
 More example you can find here [example/](example/)
 
 ### Run Test
