@@ -1,6 +1,6 @@
 ### Monobank Acquiring PHP SDK
 
-Unofficial SDK for Monobank Acquiring. (Official Docs)[https://api.monobank.ua/docs/acquiring.html]
+Unofficial SDK for Monobank Acquiring. https://api.monobank.ua/docs/acquiring.html
 
 ### Examples
 Before run example, please set global variable `MONO_XTOKEN`
