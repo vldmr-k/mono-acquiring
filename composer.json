@@ -3,7 +3,7 @@
     "description": "Monobank Acquiring library",
     "type": "library",
     "require": {
-        "guzzlehttp/guzzle": "^7.5",
+        "guzzlehttp/guzzle": "^7.0",
         "starkbank/ecdsa": "0.0.5"
     },
     "require-dev": {
