@@ -27,7 +27,7 @@ class StatementMapper implements MapperInterface
                     $item['approvalCode'],
                     $item['rrn']
                 );
-            }, $item['cancelList']);
+            }, $item['cancelList'] ?? []);
 
             $statement = new StatementItem(
                 $item['invoiceId'],
