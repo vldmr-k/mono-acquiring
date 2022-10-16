@@ -35,12 +35,12 @@ class StatementMapper implements MapperInterface
                 $item['maskedPan'],
                 $item['date'],
                 $item['paymentScheme'],
-                $item['amount'],
-                $item['profitAmount'],
-                $item['ccy'],
-                $item['approvalCode'],
-                $item['rrn'],
-                $item['reference'],
+                $item['amount'] ?? 0,
+                $item['profitAmount'] ?? 0,
+                $item['ccy'] ?? 0,
+                $item['approvalCode'] ?? null,
+                $item['rrn'] ?? null,
+                $item['reference'] ?? null,
                 $cancelList
             );
 

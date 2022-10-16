@@ -21,24 +21,24 @@ class StatusMapper implements MapperInterface
                 $item['status'],
                 $item['createdDate'],
                 $item['modifiedDate'],
-                $item['amount'],
-                $item['ccy'],
-                $item['approvalCode'],
-                $item['rrn'],
-                $item['extRef']
+                $item['amount'] ?? 0,
+                $item['ccy'] ?? 0,
+                $item['approvalCode'] ?? null,
+                $item['rrn'] ?? null,
+                $item['extRef'] ?? null
             );
         }, $data['cancelList'] ?? []);
 
         $output = new InvoiceStatus(
             $data['invoiceId'],
             $data['status'],
-            $data['amount'],
-            $data['ccy'],
-            $data['finalAmount'],
-            $data['reference'],
-            $data['createdDate'],
-            $data['modifiedDate'],
-            $data['failureReason'],
+            $data['amount'] ?? 0,
+            $data['ccy'] ?? 0,
+            $data['finalAmount'] ?? 0,
+            $data['reference'] ?? null,
+            $data['createdDate'] ?? null,
+            $data['modifiedDate'] ?? null,
+            $data['failureReason'] ?? null,
             $cancelList
         );
 
