@@ -27,7 +27,7 @@ class PaymentInfoMapper implements MapperInterface
                 $item['rrn'],
                 $item['extRef']
             );
-        }, $data['cancelList']);
+        }, $data['cancelList'] ?? []);
 
         $output = new InvoicePaymentInfo(
             $data['maskedPan'],

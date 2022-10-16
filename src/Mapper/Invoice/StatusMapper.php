@@ -27,7 +27,7 @@ class StatusMapper implements MapperInterface
                 $item['rrn'],
                 $item['extRef']
             );
-        }, $data['cancelList']);
+        }, $data['cancelList'] ?? []);
 
         $output = new InvoiceStatus(
             $data['invoiceId'],
