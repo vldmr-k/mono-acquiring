@@ -35,7 +35,7 @@ More example you can find here [example/](example/). Before run example, please 
 ### Run Test
 ```shell script
 make build
-make test
+make unit
 ```
 
 ### Coverage
